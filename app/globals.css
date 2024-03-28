@@ -39,6 +39,10 @@ body {
   color: #ffffff;
 }
 
+.btn-primary-light {
+  background-color: skyblue;
+}
+
 .btn-primary-dark {
   background-color: #4f46e5;
 }

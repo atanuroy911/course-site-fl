@@ -11,34 +11,28 @@ const ContentSection = () => {
   // Define your course data
   const courseData: { [key: string]: Course[] } = {
     'Web Dev': [
-      { title: 'HTML and CSS Fundamentals', description: 'Learn the basics of HTML and CSS for web development', imageUrl: '/html-css-fundamentals.jpg' },
-      { title: 'JavaScript Essentials', description: 'Master the fundamentals of JavaScript programming language', imageUrl: '/javascript-essentials.jpg' },
-      { title: 'React.js for Beginners', description: 'Get started with React.js library for building user interfaces', imageUrl: '/reactjs-for-beginners.jpg' },
-      { title: 'Node.js Crash Course', description: 'Learn the basics of Node.js for server-side JavaScript development', imageUrl: '/nodejs-crash-course.jpg' },
+      { title: 'HTML and CSS Fundamentals', description: 'Learn the basics of HTML and CSS for web development', imageUrl: '/w1.png' },
+      { title: 'JavaScript Essentials', description: 'Master the fundamentals of JavaScript programming language', imageUrl: '/w2.jpeg' },
+      { title: 'React.js for Beginners', description: 'Get started with React.js library for building user interfaces', imageUrl: '/w3.jpeg' },
+      { title: 'Node.js Crash Course', description: 'Learn the basics of Node.js for server-side JavaScript development', imageUrl: '/w4.jpeg' },
     ],
     'App Dev': [
-      { title: 'iOS App Development with Swift', description: 'Build native iOS apps using the Swift programming language', imageUrl: '/ios-app-dev-swift.jpg' },
-      { title: 'Android App Development with Kotlin', description: 'Develop Android apps using the Kotlin programming language', imageUrl: '/android-app-dev-kotlin.jpg' },
-      { title: 'Cross-platform Mobile App Development', description: 'Create mobile apps that work on both iOS and Android platforms', imageUrl: '/cross-platform-mobile-app-dev.jpg' },
-      { title: 'Flutter UI Design Masterclass', description: 'Design beautiful user interfaces with Flutter framework', imageUrl: '/flutter-ui-design.jpg' },
-    ],
-    'JavaScript': [
-      { title: 'JavaScript Fundamentals', description: 'Learn the basics of JavaScript programming language', imageUrl: '/javascript-fundamentals.jpg' },
-      { title: 'Advanced JavaScript Concepts', description: 'Explore advanced topics in JavaScript programming', imageUrl: '/advanced-javascript-concepts.jpg' },
-      { title: 'ES6+ Modern JavaScript', description: 'Master the latest features of ECMAScript 6 and beyond', imageUrl: '/es6-modern-javascript.jpg' },
-      { title: 'Functional Programming in JavaScript', description: 'Understand functional programming principles in JavaScript', imageUrl: '/functional-programming-js.jpg' },
+      { title: 'iOS App Development with Swift', description: 'Build native iOS apps using the Swift programming language', imageUrl: '/ios-app-development-company.webp' },
+      { title: 'Android App Development with Kotlin', description: 'Develop Android apps using the Kotlin programming language', imageUrl: '/Android-App-Development-1.jpeg' },
+      { title: 'Cross-platform Mobile App Development', description: 'Create mobile apps that work on both iOS and Android platforms', imageUrl: '/Cross-Platform-App-development-illustration.webp' },
+      { title: 'Flutter UI Design Masterclass', description: 'Design beautiful user interfaces with Flutter framework', imageUrl: '/flutter.png' },
     ],
     'Android': [
-      { title: 'Android Basics: User Interface', description: 'Learn the basics of Android app development focusing on UI', imageUrl: '/android-basics-ui.jpg' },
-      { title: 'Android Basics: User Input', description: 'Get started with user input handling in Android apps', imageUrl: '/android-basics-user-input.jpg' },
-      { title: 'Android Networking Fundamentals', description: 'Understand networking concepts for Android app development', imageUrl: '/android-networking-fundamentals.jpg' },
-      { title: 'Android Database Essentials', description: 'Learn to work with databases in Android apps', imageUrl: '/android-database-essentials.jpg' },
+      { title: 'Android Basics: User Interface', description: 'Learn the basics of Android app development focusing on UI', imageUrl: '/Android-User-Interface-1.jpeg' },
+      { title: 'Android Basics: User Input', description: 'Get started with user input handling in Android apps', imageUrl: '/maxresdefault.jpeg' },
+      { title: 'Android Networking Fundamentals', description: 'Understand networking concepts for Android app development', imageUrl: '/Networking-twitter.png' },
+      { title: 'Android Database Essentials', description: 'Learn to work with databases in Android apps', imageUrl: '/maxresdefault2.jpeg' },
     ],
     'Python': [
-      { title: 'Python Programming Basics', description: 'Introduction to Python programming language', imageUrl: '/python-programming-basics.jpg' },
-      { title: 'Python Data Structures', description: 'Explore different data structures in Python', imageUrl: '/python-data-structures.jpg' },
-      { title: 'Python Web Scraping', description: 'Learn how to extract data from websites using Python', imageUrl: '/python-web-scraping.jpg' },
-      { title: 'Django Web Development', description: 'Build web applications using Django framework', imageUrl: '/django-web-development.jpg' },
+      { title: 'Python Programming Basics', description: 'Introduction to Python programming language', imageUrl: '/1686548640655.jpeg' },
+      { title: 'Python Data Structures', description: 'Explore different data structures in Python', imageUrl: '/pythondatastructuresmin.png' },
+      { title: 'Python Web Scraping', description: 'Learn how to extract data from websites using Python', imageUrl: '/web-scraping-with-python.png' },
+      { title: 'Django Web Development', description: 'Build web applications using Django framework', imageUrl: '/Python-and-Django-for-Web-Development.jpeg' },
     ],
   };
   

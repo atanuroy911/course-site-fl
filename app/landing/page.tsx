@@ -31,7 +31,7 @@ const imageInfo=[
 export default function Page() {
   return (
     <div className="container mx-auto">
-      <Header />
+      {/* <Header /> */}
       <section className="mt-8">
         {/* <Banner /> */}
         <Carousel images={images} imageInfo={imageInfo}/>
