@@ -5,9 +5,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { useRouter } from '@/app/hooks/customRouter';
-import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify';
 
 const Page: React.FC = () => {
   const [username, setUsername] = useState('');

@@ -1,12 +1,7 @@
 'use client'
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Providers } from '../providers';
-import "../globals.css";
+
 import Header from "../components/header";
 import Footer from "../components/footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
     children,
@@ -18,9 +13,7 @@ export default function RootLayout({
             <div className="container mx-auto">
                 <Header></Header>
             </div>
-            <Providers>
-                {children}
-            </Providers>
+            {children}
             <Footer></Footer>
         </>
 

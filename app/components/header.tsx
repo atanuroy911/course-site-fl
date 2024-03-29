@@ -1,12 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import categoriesData from '../../utils/categories';
+import { getSession } from '@/utils/auth';
+import axios from 'axios';
+import { RxAvatar } from "react-icons/rx";
+import { toast } from 'react-toastify';
 
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
+  const [session, setSession] = useState(null);
   const { categories } = categoriesData; // Extract categories from JSON data
+
+  useEffect(() => {
+    // Assume getSession is an asynchronous function that fetches the session
+    async function fetchData() {
+      const response = await axios.get('/api/check')
+      if (response.status == 200) {
+        // console.log(response.data.message);
+        setSession(response.data.session);
+      }
+    }
+    fetchData();
+  }, []);
 
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -16,6 +34,19 @@ const Header: React.FC = () => {
     setTimeout(() => {
       setIsDropdownOpen(false);
     }, 200); // Adjust the delay as needed (200ms in this case)
+  };
+
+  const handleDropdownToggle2 = () => {
+    setIsDropdownOpen2(!isDropdownOpen2);
+  };
+
+  const handleLogout = async () => {
+    const response = await axios.get('/api/logout')
+      if (response.status == 200) {
+        // console.log(response.data.message);
+        setSession(null);
+        toast.success(response.data.message);
+      }
   };
 
   return (
@@ -74,14 +105,35 @@ const Header: React.FC = () => {
           </svg>
         </div>
       </div>
-      <div className="flex items-center">
-        <Link href="/join/login" className="mr-4 px-4 py-2 text-black border bg-white hover:bg-gray-500 hover:text-white">
-          Login
-        </Link>
-        <Link href="/join/signup" className="mr-4 px-4 py-2 border text-white bg-gray-600 hover:bg-gray-800">
-          Signup
-        </Link>
-        <ThemeSwitch />
+      <div className="flex items-center relative">
+        {session ? (
+          <>
+            <div className="mx-auto relative">
+              <button onClick={handleDropdownToggle2} className="px-4 py-2 text-black ">
+                <RxAvatar size={28}/>
+              </button>
+              {isDropdownOpen2 && (
+                <div className="absolute top-full px-4 right-0 text-sm border bg-white border-gray-300 rounded shadow-md z-10">
+                  <ul>
+                    <li className="py-2 px-4 cursor-pointer hover:bg-gray-100">My Courses</li>
+                    <li className="py-2 px-4 cursor-pointer hover:bg-gray-100">Cart</li>
+                    <li onClick={handleLogout} className="py-2 px-4 cursor-pointer hover:bg-gray-100 text-red-500">Logout</li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <Link href="/join/login" className="mr-4 px-4 py-2 text-black border bg-white hover:bg-gray-500 hover:text-white">
+              Login
+            </Link>
+            <Link href="/join/signup" className="mr-4 px-4 py-2 border text-white bg-gray-600 hover:bg-gray-800">
+              Signup
+            </Link>
+          </>
+        )}
+        {/* <ThemeSwitch /> */}
       </div>
     </nav>
   );
